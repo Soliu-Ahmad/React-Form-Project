@@ -135,7 +135,7 @@ const Register = () => {
                             aria-invalid={validMatch ? "false" : "true"}
                             aria-describedby="confirmnote"
                             onFocus={() => setMatchFocus(true)}
-                            onBlue={() =>setMatchFocus(false)}
+                            onBlur={() =>setMatchFocus(false)}
                             />
                             <p id="confirmnote" className={matchFocus && !validMatch ? "instructions" : "offscreen"}>
                                 <FontAwesomeIcon icon={faInfoCircle} />
