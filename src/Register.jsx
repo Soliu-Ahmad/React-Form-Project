@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+ 
 
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
@@ -43,19 +43,6 @@ const Register = () => {
         setErrMsg('');
     }, [user, pwd, matchPwd])
 
-    // const handleSubmit = async (e) => {
-    //     e.preventDefault();
-    //     // if button enabled with JS hack
-    //     const v1 = USER_REGEX.test(user);
-    //     const v2 = PWD_REGEX.test(pwd);
-    //     if (!v1 || !v2) {
-    //         setErrMsg("Invalid Entry");
-    //         return;
-    //     }
-    //     console.log(user, pwd)
-    //     setSuccess(true);
-    //     }
-    
     const handleSubmit = async (e) => {
         e.preventDefault()
         const v1 = USER_REGEX.test(user);
@@ -78,7 +65,7 @@ const Register = () => {
             <section> 
                 <h1>Success</h1>
                 <p>
-                    <a href="#">Sign Up</a>
+                    <a href="#">Sign In</a>
                 </p>
             </section>
 

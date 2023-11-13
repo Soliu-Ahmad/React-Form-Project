@@ -14,7 +14,11 @@ html {
 
 body {
     min-height: 100vh;
-    background-color: #c6878f;
+    /* background-color: #c6878f; */
+    background: url('balls-407081_1280.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .App {
@@ -34,6 +38,8 @@ section {
     flex-direction: column;
     justify-content: flex-start;
     padding: 1rem;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
     background-color: rgba(0,0,0,0.4);
 }
 
@@ -56,6 +62,7 @@ textarea {
   font-family: 'Nunito', sans-serif;
   font-size: 22px;
   padding: 0.25rem;
+  outline: none;
   border-radius: 0.5rem;
 }
 
