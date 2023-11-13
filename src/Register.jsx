@@ -43,34 +43,43 @@ const Register = () => {
         setErrMsg('');
     }, [user, pwd, matchPwd])
 
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault();
+    //     // if button enabled with JS hack
+    //     const v1 = USER_REGEX.test(user);
+    //     const v2 = PWD_REGEX.test(pwd);
+    //     if (!v1 || !v2) {
+    //         setErrMsg("Invalid Entry");
+    //         return;
+    //     }
+    //     console.log(user, pwd)
+    //     setSuccess(true);
+    //     }
+    
     const handleSubmit = async (e) => {
-        e.preventDefault();
-        // if button enabled with JS hack
+        e.preventDefault()
         const v1 = USER_REGEX.test(user);
         const v2 = PWD_REGEX.test(pwd);
-        if (!v1 || !v2) {
-            setErrMsg("Invalid Entry");
-            return;
+        if(!v1 || !v2) {
+            setErrMsg('Invalid Entry')
+            return
         }
-        console.log(user, pwd)
-        setSuccess(true);
+            console.log(user, pwd)
+            setSuccess(true);
+            // clear state and control inputs
+            setUser('');
+            setPwd('');
+            setMatchPwd('');
         }
-    
-
+     
     return (
         <>
-            {/* {success ? (
-                <section>
-                    <h1>Success!</h1>
-                    <p>
-                        <a href="#">Sign In</a>
-                    </p>
-                </section>
-            ) : ( */}
+        
+            
                 <section>
                     <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
                     <h1>Register</h1>
-                    <form >
+                    <form onSubmit={handleSubmit}>
                         <label htmlFor="username">
                             Username:
                             <FontAwesomeIcon icon={faCheck} className={validName ? "valid" : "hide"} />
@@ -141,7 +150,14 @@ const Register = () => {
                                 <FontAwesomeIcon icon={faInfoCircle} />
                                 Must match the first passsword input field.
                             </p>
+                            <button disabled={!validName || !validPwd ? true : false}>Sign Up</button>
                     </form>
+                    <p>
+                        Already Registered? <br/>
+                        <span className="line">
+                            <a href="#">Sign In</a>
+                        </span>
+                    </p>
 
                 </section>
             {/* )} */}
